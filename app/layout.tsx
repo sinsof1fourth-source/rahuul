@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/shared/ThemeProvider'
 import { SmoothScroll } from '@/components/shared/SmoothScroll'
 import { CustomCursor } from '@/components/shared/CustomCursor'
 import { BackToTop } from '@/components/shared/BackToTop'
+import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { generatePageMetadata, personJsonLd } from '@/lib/seo'
@@ -85,6 +86,8 @@ export default function RootLayout({
             <CustomCursor />
             {/* Scroll progress ring & BackToTop button */}
             <BackToTop />
+            {/* Google Analytics (reads process.env.NEXT_PUBLIC_GA_ID) */}
+            <GoogleAnalytics />
             {/* Main sticky navigation header */}
             <Navbar />
             {/* Main Content Area */}
