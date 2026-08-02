@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DARK MODE VARIANT
+   Override Tailwind's default media-query dark to use the .dark class.
+   next-themes (and our custom ThemeProvider) toggle this class on <html>.
+───────────────────────────────────────────────────────────────────────────── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — Light Mode (default)
+───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --background:      #ffffff;
+  --surface:         #f6f8fa;
+  --elevated:        #eaeef2;
+
+  /* Borders */
+  --border-subtle:   #d0d7de;
+  --border-strong:   #b1bac4;
+
+  /* Text */
+  --foreground:      #1c2128;
+  --foreground-muted:#57606a;
+  --foreground-dim:  #545d68;
+
+  /* Accent — violet-700 in light, brighter in dark */
+  --accent:          #6d28d9;
+  --accent-light:    #7c3aed;
+  --accent-warm:     #d97706;
+  --accent-cool:     #0891b2;
+  --accent-glow:     rgba(109, 40, 217, 0.15);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — Dark Mode
+───────────────────────────────────────────────────────────────────────────── */
+.dark {
+  --background:       #08090a;
+  --surface:          #0f1117;
+  --elevated:         #161b22;
+
+  --border-subtle:    #21262d;
+  --border-strong:    #30363d;
+
+  --foreground:       #f0f6fc;
+  --foreground-muted: #8b949e;
+  --foreground-dim:   #768390;
+
+  --accent:           #7c3aed;
+  --accent-light:     #a78bfa;
+  --accent-warm:      #f59e0b;
+  --accent-cool:      #06b6d4;
+  --accent-glow:      rgba(124, 58, 237, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TAILWIND v4 DESIGN SYSTEM
+   Maps CSS custom properties → Tailwind utility classes via @theme inline.
+   Using `inline` ensures utilities reference the CSS vars at runtime,
+   so they automatically respond to theme changes without JS.
+───────────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Color utilities: bg-background, text-foreground, border-accent, etc. */
+  --color-background:      var(--background);
+  --color-surface:         var(--surface);
+  --color-elevated:        var(--elevated);
+  --color-border-subtle:   var(--border-subtle);
+  --color-border-strong:   var(--border-strong);
+  --color-foreground:      var(--foreground);
+  --color-foreground-muted:var(--foreground-muted);
+  --color-foreground-dim:  var(--foreground-dim);
+  --color-accent:          var(--accent);
+  --color-accent-light:    var(--accent-light);
+  --color-accent-warm:     var(--accent-warm);
+  --color-accent-cool:     var(--accent-cool);
+
+  /* Font utilities: font-display, font-body, font-mono */
+  --font-display: var(--font-bricolage), 'Bricolage Grotesque', sans-serif;
+  --font-body:    var(--font-geist-sans), 'Geist', sans-serif;
+  --font-mono:    var(--font-geist-mono), 'Geist Mono', monospace;
+
+  /* Shadow utilities: shadow-card, shadow-elevated, shadow-glow */
+  --shadow-card:     0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow:     0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow);
+
+  /* Border radius: rounded-sm → 4px, rounded-2xl → 24px */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+
+  /* ── Keyframes ── */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-20px); }
+  }
+
+  @keyframes float-alt {
+    0%, 100% { transform: translateY(-10px); }
+    50%       { transform: translateY(10px); }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.2); }
+  }
+
+  @keyframes fade-slide-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes ping-slow {
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
+
+  /* Animation utilities: animate-float, animate-float-alt, etc. */
+  --animate-float:        float     6s ease-in-out infinite;
+  --animate-float-alt:    float-alt 8s ease-in-out infinite;
+  --animate-pulse-dot:    pulse-dot 2s ease-in-out infinite;
+  --animate-fade-slide-up:fade-slide-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-ping-slow:    ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+───────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    border-color: var(--border-subtle);
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    hanging-punctuation: first last;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), sans-serif;
+    line-height: 1.7;
+    /* Smooth theme transitions — excludes transforms/opacity to avoid
+       interfering with motion animations */
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--foreground);
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--font-mono), monospace;
+  }
+
+  /* Visible focus ring — WCAG 2.2 AA compliant */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Suppress default cursor on elements when custom cursor is active */
+  .cursor-none,
+  .cursor-none * {
+    cursor: none !important;
+  }
+
+  /* Brand selection color */
+  ::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+
+  /* Themed scrollbar (Webkit) */
+  ::-webkit-scrollbar       { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  /* Honor prefers-reduced-motion — disable all animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COMPONENT-LEVEL UTILITIES
+   Composable classes shared across multiple components.
+───────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Centered, max-width container with responsive padding */
+  .container-default {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Gradient text — accent violet → amber */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-warm) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Fallback for browsers that don't support background-clip: text */
+    color: var(--accent-light);
+  }
+
+  /* Frosted glass surface */
+  .glass {
+    background-color: color-mix(in srgb, var(--elevated) 75%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Gradient border via background-origin trick */
+  .border-gradient {
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+  }
+
+}
