@@ -21,7 +21,7 @@ function PostCard({ post }: { post: BlogPost }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="post-card group relative flex flex-col justify-between rounded-2xl border border-border-subtle/80 bg-surface/40 p-7 sm:p-8 transition-colors duration-300 hover:border-border-strong/90 hover:bg-surface/80 hover:shadow-card overflow-hidden"
+      className="post-card group relative flex flex-col justify-between rounded-2xl border border-border-subtle/80 bg-surface/40 p-7 sm:p-8 transition-colors duration-300 hover:border-accent/40 hover:bg-surface/80 hover:shadow-card overflow-hidden"
     >
       {/* Radial glow halo on hover */}
       <div
@@ -71,11 +71,14 @@ export function LatestWritingSection() {
     <section ref={sectionRef} className="container-default mb-24 md:mb-36">
       <div className="mb-12 flex flex-col justify-between md:flex-row md:items-end">
         <div>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            Latest Writing
+          <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-light">
+            Research &amp; Writing
+          </span>
+          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+            Systems Notes &amp; Essays
           </h2>
           <p className="mt-2 font-medium text-foreground-muted">
-            Thoughts on software architecture, frontend tech, and engineering design.
+            Documented research on quantitative systems, multi-agent orchestration, and durable architecture.
           </p>
         </div>
 
@@ -84,7 +87,7 @@ export function LatestWritingSection() {
             href="/blog"
             className="group inline-flex items-center gap-1 font-semibold text-accent-light transition-colors hover:text-accent-light/85"
           >
-            Read full blog{' '}
+            Read all technical essays{' '}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

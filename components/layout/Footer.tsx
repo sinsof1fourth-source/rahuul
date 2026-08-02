@@ -32,7 +32,7 @@ export function Footer() {
             <BrandLogo size="md" showText />
           </Link>
           <p className="text-sm leading-relaxed text-foreground-muted">
-            Software engineer with a designer&apos;s eye. Crafting high-performance web products and thoughtful design tokens.
+            Rahuul Kalappatt // The Shadow Architect — Engineering AI systems, quantitative research, and intelligent automation in silence.
           </p>
         </div>
 

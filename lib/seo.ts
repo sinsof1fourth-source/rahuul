@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 
-/* ─── Constants ─── */
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul.dev'
+/* ─── Central Production Domain ─── */
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul-five.vercel.app'
 const SITE_NAME = 'RAHUUL'
-const TWITTER_HANDLE = '@rahulhere'
+const SITE_SUBTITLE = 'The Shadow Architect'
+const TWITTER_HANDLE = '@rahuul'
 
 const DEFAULT_DESCRIPTION =
-  'Software engineer with a designer\'s eye — building high-performance web apps, thoughtful design systems, and writing the occasional essay.'
+  'Rahuul Kalappatt (The Shadow Architect) — AI Architect, Quant Researcher, Systems Builder, and Media Creator. Engineering intelligent automation and long-term systems in silence.'
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og.png`
 
@@ -37,7 +38,7 @@ export function generatePageMetadata({
 }: PageSEOProps = {}): Metadata {
   const fullTitle = title
     ? `${title} · ${SITE_NAME}`
-    : `${SITE_NAME} — Software Engineer & Designer`
+    : `${SITE_NAME} KALAPPATT // ${SITE_SUBTITLE}`
 
   const canonicalUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`
 
@@ -50,7 +51,7 @@ export function generatePageMetadata({
       title: fullTitle,
       description,
       url: canonicalUrl,
-      siteName: SITE_NAME,
+      siteName: `${SITE_NAME} // ${SITE_SUBTITLE}`,
       locale: 'en_US',
       type,
       images: [{ url: image, width: 1200, height: 630, alt: fullTitle }],
@@ -95,13 +96,21 @@ export function generatePageMetadata({
 export const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Rahul',
+  name: 'Rahuul Kalappatt',
+  alternateName: 'The Shadow Architect',
   url: BASE_URL,
   sameAs: [
-    'https://github.com/rahul',
-    'https://twitter.com/rahulhere',
-    'https://linkedin.com/in/rahul',
+    'https://github.com/sinsof1fourth-source',
+    'https://twitter.com/rahuul',
   ],
-  jobTitle: 'Software Engineer',
+  jobTitle: 'AI Architect & Quant Researcher',
   description: DEFAULT_DESCRIPTION,
+  knowsAbout: [
+    'Artificial Intelligence',
+    'Quantitative Research',
+    'Automated Trading Systems',
+    'Multi-Agent Architecture',
+    'Media Engineering',
+    'Systems Architecture',
+  ],
 } as const

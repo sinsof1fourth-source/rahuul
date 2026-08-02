@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import Image from 'next/image'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { BrandLogo } from '@/components/shared/BrandLogo'
 import { Button } from '@/components/ui/Button'
 import { useHeroAnimation } from '@/lib/animations/useHeroAnimation'
@@ -40,38 +40,43 @@ export function HeroSection() {
         <div className="lg:col-span-7">
           <div
             ref={badgeRef}
-            className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1.5 text-sm text-accent-light shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-xs sm:text-sm font-mono text-accent-light shadow-sm"
           >
-            <Sparkles className="h-4 w-4" />
-            <span className="font-medium tracking-wide">Open for collaborations</span>
+            <ShieldCheck className="h-4 w-4 text-accent-light" />
+            <span className="font-semibold uppercase tracking-wider">RAHUUL KALAPPATT // THE SHADOW ARCHITECT</span>
           </div>
 
           <div className="mt-6 max-w-4xl">
             <h1
               ref={headlineRef}
-              className="font-display text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl leading-[1.08] sm:leading-[1.05]"
+              className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl leading-[1.08] sm:leading-[1.05]"
             >
-              Engineering web <br />
-              products that <span className="text-gradient">feel like magic.</span>
+              Building intelligent systems <br />
+              <span className="text-gradient">before the world sees them.</span>
             </h1>
           </div>
 
-          <div className="mt-8 max-w-2xl">
+          <div className="mt-6 max-w-2xl">
             <p
               ref={descriptionRef}
-              className="text-lg sm:text-xl leading-relaxed text-foreground-muted"
+              className="text-base sm:text-lg leading-relaxed text-foreground-muted"
             >
-              I am Rahul, a senior frontend architect specializing in building lightning-fast, accessible, and pixel-perfect applications using React, Next.js, and TypeScript.
+              I design and build AI systems, quantitative research platforms, automation infrastructure, and digital media workflows. My work focuses on disciplined experimentation, reliable architecture, and long-term systems that compound.
             </p>
+
+            <div className="mt-4 pt-4 border-t border-border-subtle/40 flex items-center gap-3 text-xs sm:text-sm font-mono text-amber-400/90">
+              <span className="inline-block h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+              <span>&ldquo;Build systems in silence. Reveal results, not intentions.&rdquo;</span>
+            </div>
           </div>
 
-          <div ref={actionsRef} className="mt-10 flex flex-wrap gap-4 sm:gap-5">
-            <Button href="/work" size="lg">
-              View My Work
+          <div ref={actionsRef} className="mt-8 flex flex-wrap gap-4 sm:gap-5">
+            <Button href="#projects" size="lg">
+              Explore the systems
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button href="/contact" variant="secondary" size="lg">
-              Let&apos;s Connect
+            <Button href="#roadmap" variant="secondary" size="lg">
+              View the architecture
             </Button>
           </div>
         </div>
@@ -80,7 +85,7 @@ export function HeroSection() {
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div
             ref={portraitRef}
-            className="group relative w-full max-w-md overflow-hidden rounded-3xl border border-border-subtle/80 bg-surface/50 p-3 shadow-elevated transition-all duration-300 hover:border-border-strong"
+            className="group relative w-full max-w-md overflow-hidden rounded-3xl border border-border-subtle/80 bg-surface/50 p-3 shadow-elevated transition-all duration-300 hover:border-accent/40"
           >
             {/* Subtle glow halo inside card */}
             <div
@@ -91,7 +96,7 @@ export function HeroSection() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-surface">
               <Image
                 src="/images/portrait.png"
-                alt="Rahul — Senior Frontend Architect & Designer"
+                alt="Rahuul Kalappatt — The Shadow Architect"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 440px"
@@ -104,10 +109,10 @@ export function HeroSection() {
               <BrandLogo size="sm" animated={false} />
               <div className="flex flex-col">
                 <span className="font-display text-xs font-bold tracking-wider text-foreground uppercase">
-                  RAHUUL
+                  RAHUUL KALAPPATT
                 </span>
-                <span className="text-[10px] font-medium text-foreground-muted">
-                  Staff Architect
+                <span className="text-[10px] font-mono text-accent-light">
+                  The Shadow Architect
                 </span>
               </div>
             </div>

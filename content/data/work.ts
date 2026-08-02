@@ -1,55 +1,89 @@
-/* ─── Types ─── */
 export interface Project {
   slug: string
   title: string
+  subtitle: string
+  category: string
   description: string
+  longDescription?: string
+  status: 'Research' | 'Testnet & Research' | 'Prototype' | 'In Development' | 'Active Venture' | 'Live'
+  year: string
   tags: string[]
-  year: number
-  featured: boolean
-  cover: string
-  coverAlt: string
   url?: string
   github?: string
-  draft?: boolean
+  featured: boolean
 }
 
-/* ─── Sample Projects ─── */
 export const PROJECTS: Project[] = [
   {
-    slug: 'velocity',
-    title: 'Velocity',
+    slug: 'vega-omega',
+    title: 'VEGA OMEGA',
+    subtitle: 'AI + Quantitative Systems Architecture',
+    category: 'AI + Quantitative Systems',
     description:
-      'A lightning-fast SaaS analytics dashboard that processes millions of events in real-time. Delivers insights in under 100ms with Clickhouse-powered aggregations and a tRPC API layer.',
-    tags: ['Next.js', 'TypeScript', 'tRPC', 'Clickhouse'],
-    year: 2026,
+      'A research and systems architecture initiative focused on quantitative strategy evaluation, market analysis, autonomous agents, and evidence-driven decision systems.',
+    status: 'Research',
+    year: '2026',
+    tags: ['Python', 'Quantitative Research', 'Autonomous Agents', 'Systems Architecture'],
     featured: true,
-    cover: '/images/work/velocity.jpg',
-    coverAlt: 'Velocity dashboard showing real-time analytics charts and KPI cards',
-    url: 'https://velocity.demo',
   },
   {
-    slug: 'bloom',
-    title: 'Bloom Design System',
+    slug: 'rahuulbot',
+    title: 'RAHUULBOT',
+    subtitle: 'Automated Trading Research & Execution Engine',
+    category: 'Automated Trading Research',
     description:
-      'A comprehensive design system powering three production applications. 80+ accessible components, full Figma library with 2,000+ frames, and a zero-runtime token architecture.',
-    tags: ['React', 'TypeScript', 'Storybook', 'Figma'],
-    year: 2025,
+      'A modular trading system designed around exchange abstraction, deterministic execution, risk controls, position lifecycle management, logging, and validation.',
+    status: 'Testnet & Research',
+    year: '2026',
+    tags: ['TypeScript', 'Execution Engine', 'Risk Controls', 'Exchange Abstraction'],
     featured: true,
-    cover: '/images/work/bloom.jpg',
-    coverAlt: 'Bloom design system component library showing button and form variants',
-    github: 'https://github.com/rahul/bloom',
   },
   {
-    slug: 'chronicle',
-    title: 'Chronicle',
+    slug: 'shikrahq',
+    title: 'SHIKRAHQ',
+    subtitle: 'AI Media Pipeline & Video Processing Infrastructure',
+    category: 'AI Media Infrastructure',
     description:
-      'An open-source personal CRM that helps you stay genuinely connected with the people that matter. Built privacy-first with local-first sync via CRDTs.',
-    tags: ['Next.js', 'SQLite', 'CRDT', 'PWA'],
-    year: 2025,
+      'A multi-agent media pipeline designed to process gaming footage, transcribe audio, edit long-form and short-form content, generate thumbnails, and support publishing workflows.',
+    status: 'Prototype',
+    year: '2025–2026',
+    tags: ['Whisper', 'Ollama', 'FFmpeg', 'FastAPI', 'Docker'],
     featured: true,
-    cover: '/images/work/chronicle.jpg',
-    coverAlt: 'Chronicle personal CRM showing contact timeline and relationship graph',
-    github: 'https://github.com/rahul/chronicle',
-    url: 'https://chronicle.app',
+  },
+  {
+    slug: 'openclaw',
+    title: 'OPENCLAW',
+    subtitle: 'Multi-Agent Orchestration Framework',
+    category: 'Agent Architecture',
+    description:
+      'An orchestration environment used to coordinate autonomous workflows, tools, structured tasks, and system-specific agents.',
+    status: 'In Development',
+    year: '2026',
+    tags: ['Node.js', 'Agent Orchestration', 'Task Processing', 'Workflows'],
+    featured: true,
+  },
+  {
+    slug: 'sand-and-sins',
+    title: 'SAND AND SINS',
+    subtitle: 'AI-Assisted Storytelling & Digital Media Channel',
+    category: 'Creative Media',
+    description:
+      'A creative channel exploring AI-assisted storytelling, gaming content, cinematic concepts, and digital production.',
+    status: 'Active Venture',
+    year: '2025–2026',
+    tags: ['Creative Media', 'Digital Production', 'AI Storytelling', 'Cinematic Concepts'],
+    featured: false,
+  },
+  {
+    slug: 'rj-enterprises',
+    title: 'RJ ENTERPRISES',
+    subtitle: 'Software, Media & Quantitative Initiatives Umbrella',
+    category: 'Business Ventures',
+    description:
+      'An umbrella structure for software, media, quantitative research, and digital product initiatives.',
+    status: 'Active Venture',
+    year: '2024–2026',
+    tags: ['Business Ventures', 'Software', 'Digital Media', 'Research'],
+    featured: false,
   },
 ]

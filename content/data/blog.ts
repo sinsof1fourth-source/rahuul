@@ -12,45 +12,45 @@ export interface BlogPost {
   draft?: boolean
 }
 
-/* ─── Sample Posts ─── */
+/* ─── Authentic Research & Technical Essays ─── */
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: 'why-i-stopped-using-css-in-js',
-    title: 'Why I stopped using CSS-in-JS (and what I use instead)',
+    slug: 'deterministic-execution-in-quantitative-systems',
+    title: 'Deterministic execution & state isolation in quantitative systems',
     description:
-      "After three years of Styled Components and Emotion, I made the switch. Here's the honest breakdown of performance, DX, and the real-world trade-offs no one talks about.",
-    date: '2026-07-15',
-    tags: ['Engineering', 'CSS', 'Performance'],
-    cover: '/images/blog/css-in-js.jpg',
-    coverAlt: 'Split-screen comparison of CSS-in-JS versus utility-first CSS approaches',
-    readingTime: '8 min read',
-    featured: true,
-    draft: false,
-  },
-  {
-    slug: 'anatomy-of-a-perfect-component-api',
-    title: 'The anatomy of a perfect component API',
-    description:
-      'What separates a component you dread using from one you reach for instinctively? A deep dive into API design principles for React component libraries.',
-    date: '2026-06-28',
-    tags: ['Design Systems', 'React', 'Engineering'],
+      'Exploring boundary separation, latency controls, position state recovery, and risk validation in quantitative trade execution engines.',
+    date: '2026-07-28',
+    tags: ['Quantitative Research', 'Systems Architecture', 'TypeScript'],
     cover: '/images/blog/component-api.jpg',
-    coverAlt: 'Diagram illustrating component API design patterns and composition strategies',
-    readingTime: '11 min read',
+    coverAlt: 'Quantitative system execution flow diagram',
+    readingTime: '12 min read',
     featured: true,
     draft: false,
   },
   {
-    slug: 'how-i-structure-nextjs-projects-2026',
-    title: 'How I structure my Next.js projects in 2026',
+    slug: 'multi-agent-orchestration-whisper-ollama',
+    title: 'Multi-agent media orchestration with Whisper, Ollama & FFmpeg',
     description:
-      "After shipping dozens of Next.js apps, I've converged on a folder structure and architecture that scales from solo side-project to large team. Here it is.",
-    date: '2026-06-10',
-    tags: ['Engineering', 'Next.js', 'Architecture'],
+      'Designing an automated, multi-stage media pipeline (SHIKRAHQ) for local speech transcription, video cutting, and automated asset generation.',
+    date: '2026-07-14',
+    tags: ['AI Media', 'FastAPI', 'FFmpeg', 'Docker'],
     cover: '/images/blog/nextjs-structure.jpg',
-    coverAlt: 'File tree showing a well-organized Next.js App Router project structure',
-    readingTime: '7 min read',
-    featured: false,
+    coverAlt: 'Multi-agent video editing pipeline',
+    readingTime: '9 min read',
+    featured: true,
+    draft: false,
+  },
+  {
+    slug: 'architecture-of-durable-software-systems',
+    title: 'The architecture of durable software systems built in shadow',
+    description:
+      'Why private experimentation, minimal dependencies, and disciplined verification yield far more resilient systems than premature publicity.',
+    date: '2026-06-30',
+    tags: ['Systems Engineering', 'Philosophy', 'Architecture'],
+    cover: '/images/blog/css-in-js.jpg',
+    coverAlt: 'Systems engineering layers diagram',
+    readingTime: '10 min read',
+    featured: true,
     draft: false,
   },
 ]

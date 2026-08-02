@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { PROJECTS } from '@/content/data/work'
 import { BLOG_POSTS } from '@/content/data/blog'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul-five.vercel.app'
 
 /**
  * Next.js dynamic sitemap generator.

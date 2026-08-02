@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul-five.vercel.app'
 
 /**
  * Next.js robots.txt generator.
