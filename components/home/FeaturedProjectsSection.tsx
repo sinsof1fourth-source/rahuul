@@ -9,14 +9,15 @@ import { useScrollReveal } from '@/lib/animations/useScrollReveal'
 import { useCardHover } from '@/lib/animations/useCardHover'
 
 function ProjectCard({ project }: { project: Project }) {
-  const { cardRef, handleMouseMove, handleMouseLeave } = useCardHover({
+  const { cardRef, handleMouseMove, handleMouseLeave } = useCardHover<HTMLAnchorElement>({
     maxRotation: 2,
     scale: 1.01,
     liftY: -4,
   })
 
   return (
-    <div
+    <Link
+      href={`/work/${project.slug}`}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -38,8 +39,9 @@ function ProjectCard({ project }: { project: Project }) {
           </Badge>
         </div>
 
-        <h3 className="font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light">
-          {project.title}
+        <h3 className="font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light flex items-center justify-between">
+          <span>{project.title}</span>
+          <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-accent-light" />
         </h3>
         <p className="mt-1 text-xs font-mono text-foreground-dim">
           {project.subtitle}
@@ -62,7 +64,7 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -96,7 +98,7 @@ export function FeaturedProjectsSection() {
             href="/work"
             className="group inline-flex items-center gap-1 font-semibold text-accent-light transition-colors hover:text-accent-light/85"
           >
-            Explore all 6 core systems{' '}
+            Explore all {PROJECTS.length} core systems{' '}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

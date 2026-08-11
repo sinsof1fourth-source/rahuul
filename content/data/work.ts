@@ -5,7 +5,7 @@ export interface Project {
   category: string
   description: string
   longDescription?: string
-  status: 'Research' | 'Testnet & Research' | 'Prototype' | 'In Development' | 'Active Venture' | 'Live'
+  status: 'Research' | 'Testnet & Research' | 'Prototype' | 'In Development' | 'Active Venture' | 'Live' | 'Concept / Long-Horizon Research'
   year: string
   tags: string[]
   url?: string
@@ -14,6 +14,18 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  {
+    slug: 'aion',
+    title: 'AION',
+    subtitle: 'Autonomous Deep-Space Systems Research',
+    category: 'Deep-Space Systems & Autonomy',
+    description:
+      'A long-horizon private space-systems research concept developing autonomous spacecraft capable of operating independently for decades and eventually enabling safe, long-duration human deep-space missions.',
+    status: 'Concept / Long-Horizon Research',
+    year: '2026–2056',
+    tags: ['Deep-Space Autonomy', 'Robotic Systems', 'Self-Healing Hardware', 'Long-Horizon Physics', 'Life Preservation Research'],
+    featured: true,
+  },
   {
     slug: 'vega-omega',
     title: 'VEGA OMEGA',
