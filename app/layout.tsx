@@ -7,7 +7,7 @@ import { BackToTop } from '@/components/shared/BackToTop'
 import { GoogleAnalytics } from '@/components/shared/GoogleAnalytics'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { generatePageMetadata, personJsonLd } from '@/lib/seo'
+import { generatePageMetadata, personJsonLd, websiteJsonLd } from '@/lib/seo'
 import './globals.css'
 
 // Standard typography subsets loaded directly via next/font
@@ -77,6 +77,11 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {/* Structured Data (JSON-LD) for WebSite schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-250">

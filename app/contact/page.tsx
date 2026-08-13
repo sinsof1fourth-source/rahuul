@@ -24,7 +24,7 @@ export default function ContactPage() {
           Let&apos;s build something great.
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-foreground-muted">
-          Whether you want to audit a performance issue, kick off a new Next.js project, or discuss frontend architecture, my inbox is always open.
+          Whether you want to discuss AI architecture, quantitative research systems, multi-agent pipelines, or technical initiatives with Rahuul Kalappatt, get in touch below.
         </p>
       </div>
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
                 Message Sent Successfully
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
-                Thank you for reaching out, {formData.name}. I will review your message and reply shortly.
+                Thank you for reaching out, {formData.name}. Rahuul will review your message and reply shortly.
               </p>
             </div>
           ) : (
@@ -55,7 +55,7 @@ export default function ContactPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Rahul Sharma"
+                  placeholder="Alex Rivera"
                   className="w-full rounded-lg border border-border-subtle bg-surface px-4 py-3 text-foreground placeholder:text-foreground-dim focus:border-accent focus:outline-none"
                 />
               </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   autoComplete="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="rahul@example.com"
+                  placeholder="alex@example.com"
                   className="w-full rounded-lg border border-border-subtle bg-surface px-4 py-3 text-foreground placeholder:text-foreground-dim focus:border-accent focus:outline-none"
                 />
               </div>
@@ -104,18 +104,18 @@ export default function ContactPage() {
           <div>
             <h2 className="font-display text-2xl font-bold mb-4">Direct Contact</h2>
             <p className="text-sm leading-relaxed text-foreground-muted mb-8">
-              Prefer direct email? Send a message directly to my primary inbox or connect on social platforms.
+              Prefer direct communication? Send an email directly to Rahuul Kalappatt&apos;s primary inbox.
             </p>
 
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:rahul@rahuul.dev"
+                href="mailto:rahuul@rahuulkalappatt.com"
                 className="flex items-center gap-3 text-sm font-semibold text-foreground hover:text-accent-light transition-colors"
               >
                 <div className="rounded-lg bg-surface p-2.5 border border-border-subtle">
                   <Mail className="h-4 w-4 text-accent-light" />
                 </div>
-                rahul@rahuul.dev
+                rahuul@rahuulkalappatt.com
               </a>
             </div>
           </div>

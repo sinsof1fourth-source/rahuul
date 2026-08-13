@@ -51,8 +51,8 @@ export function HeroSection() {
               ref={headlineRef}
               className="font-display text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl leading-[1.08] sm:leading-[1.05]"
             >
-              Building intelligent systems <br />
-              <span className="text-gradient">before the world sees them.</span>
+              Rahuul Kalappatt <br />
+              <span className="text-gradient">Building intelligent systems.</span>
             </h1>
           </div>
 

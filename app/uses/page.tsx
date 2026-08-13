@@ -1,8 +1,9 @@
 import { generatePageMetadata } from '@/lib/seo'
 
 export const metadata = generatePageMetadata({
-  title: 'Uses',
-  description: 'Hardware, software tools, design stack, and workstation setup used daily by Rahul.',
+  title: 'Uses & Engineering Workstation',
+  description: 'Hardware, software tools, research stack, and workstation setup used daily by Rahuul Kalappatt.',
+  url: '/uses',
 })
 
 const GEAR = [

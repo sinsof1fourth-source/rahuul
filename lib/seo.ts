@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 
-/* ─── Central Production Domain ─── */
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuul-five.vercel.app'
+/* ─── Central Official Production Domain ─── */
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://rahuulkalappatt.com'
 const SITE_NAME = 'RAHUUL'
+const PERSON_NAME = 'Rahuul Kalappatt'
 const SITE_SUBTITLE = 'The Shadow Architect'
 const TWITTER_HANDLE = '@rahuul'
 
 const DEFAULT_DESCRIPTION =
-  'Rahuul Kalappatt (The Shadow Architect) — AI Architect, Quant Researcher, Systems Builder, and Media Creator. Engineering intelligent automation and long-term systems in silence.'
+  'Rahuul Kalappatt is an engineer, researcher, builder and creative technologist exploring AI systems, quantitative research, automation, digital infrastructure and experimental technology.'
 
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og.png`
 
@@ -37,8 +38,8 @@ export function generatePageMetadata({
   tags,
 }: PageSEOProps = {}): Metadata {
   const fullTitle = title
-    ? `${title} · ${SITE_NAME}`
-    : `${SITE_NAME} KALAPPATT // ${SITE_SUBTITLE}`
+    ? `${title} · ${PERSON_NAME}`
+    : `${PERSON_NAME} — Engineer, Researcher, Builder & Creative Technologist`
 
   const canonicalUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`
 
@@ -51,10 +52,10 @@ export function generatePageMetadata({
       title: fullTitle,
       description,
       url: canonicalUrl,
-      siteName: `${SITE_NAME} // ${SITE_SUBTITLE}`,
+      siteName: `${SITE_NAME} // ${PERSON_NAME}`,
       locale: 'en_US',
       type,
-      images: [{ url: image, width: 1200, height: 630, alt: fullTitle }],
+      images: [{ url: image, width: 1200, height: 630, alt: `${PERSON_NAME} — ${SITE_NAME}` }],
       ...(type === 'article' && publishedAt ? { publishedTime: publishedAt } : {}),
       ...(tags?.length ? { tags } : {}),
     },
@@ -91,26 +92,45 @@ export function generatePageMetadata({
 
 /**
  * JSON-LD structured data for the site owner (Person schema).
- * Include in the root layout for sitewide person markup.
  */
 export const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Rahuul Kalappatt',
-  alternateName: 'The Shadow Architect',
+  name: PERSON_NAME,
+  alternateName: SITE_SUBTITLE,
   url: BASE_URL,
+  image: `${BASE_URL}/images/portrait.png`,
+  jobTitle: 'AI Architect, Quant Researcher & Systems Engineer',
+  description: DEFAULT_DESCRIPTION,
   sameAs: [
     'https://github.com/sinsof1fourth-source',
+    'https://x.com/rahuul',
     'https://twitter.com/rahuul',
   ],
-  jobTitle: 'AI Architect & Quant Researcher',
-  description: DEFAULT_DESCRIPTION,
   knowsAbout: [
     'Artificial Intelligence',
     'Quantitative Research',
     'Automated Trading Systems',
     'Multi-Agent Architecture',
-    'Media Engineering',
-    'Systems Architecture',
+    'Media Infrastructure',
+    'Systems Engineering',
+    'Deep-Space Autonomy',
   ],
 } as const
+
+/**
+ * JSON-LD structured data for the WebSite entity schema.
+ */
+export const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  alternateName: `${PERSON_NAME} Digital Headquarters`,
+  url: BASE_URL,
+  publisher: {
+    '@type': 'Person',
+    name: PERSON_NAME,
+    url: BASE_URL,
+  },
+} as const
+

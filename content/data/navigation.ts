@@ -10,9 +10,9 @@ export interface NavLink {
 
 /* ─── Primary Navigation ─── */
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Work', href: '/work' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Research', href: '/research' },
   { label: 'Roadmap', href: '/#roadmap' },
-  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Speaking', href: '/speaking' },
 ]
@@ -21,8 +21,9 @@ export const NAV_LINKS: NavLink[] = [
 export const FOOTER_LINKS: NavLink[][] = [
   [
     { label: 'Home', href: '/' },
+    { label: 'Projects', href: '/projects' },
     { label: 'Work', href: '/work' },
-    { label: 'Roadmap', href: '/#roadmap' },
+    { label: 'Research', href: '/research' },
     { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
   ],

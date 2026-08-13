@@ -1,9 +1,9 @@
-/* ─── Types ─── */
 export interface BlogPost {
   slug: string
   title: string
   description: string
   date: string
+  author: string
   tags: string[]
   cover: string
   coverAlt: string
@@ -15,11 +15,26 @@ export interface BlogPost {
 /* ─── Authentic Research & Technical Essays ─── */
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'aion-deep-space-autonomous-loop-architecture',
+    title: 'Autonomous self-healing loops & radiation resilience in 30-year space systems',
+    description:
+      'Architectural analysis of the 6-stage autonomous decision loop (DETECT → DIAGNOSE → REPAIR → ADAPT → RECORD → COMMUNICATE) for multi-decade deep-space probes.',
+    date: '2026-08-10',
+    author: 'Rahuul Kalappatt',
+    tags: ['Deep-Space Autonomy', 'Robotics', 'Space Systems'],
+    cover: '/images/blog/component-api.jpg',
+    coverAlt: 'AION autonomous loop decision matrix',
+    readingTime: '15 min read',
+    featured: true,
+    draft: false,
+  },
+  {
     slug: 'deterministic-execution-in-quantitative-systems',
     title: 'Deterministic execution & state isolation in quantitative systems',
     description:
       'Exploring boundary separation, latency controls, position state recovery, and risk validation in quantitative trade execution engines.',
     date: '2026-07-28',
+    author: 'Rahuul Kalappatt',
     tags: ['Quantitative Research', 'Systems Architecture', 'TypeScript'],
     cover: '/images/blog/component-api.jpg',
     coverAlt: 'Quantitative system execution flow diagram',
@@ -33,6 +48,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Designing an automated, multi-stage media pipeline (SHIKRAHQ) for local speech transcription, video cutting, and automated asset generation.',
     date: '2026-07-14',
+    author: 'Rahuul Kalappatt',
     tags: ['AI Media', 'FastAPI', 'FFmpeg', 'Docker'],
     cover: '/images/blog/nextjs-structure.jpg',
     coverAlt: 'Multi-agent video editing pipeline',
@@ -46,6 +62,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Why private experimentation, minimal dependencies, and disciplined verification yield far more resilient systems than premature publicity.',
     date: '2026-06-30',
+    author: 'Rahuul Kalappatt',
     tags: ['Systems Engineering', 'Philosophy', 'Architecture'],
     cover: '/images/blog/css-in-js.jpg',
     coverAlt: 'Systems engineering layers diagram',

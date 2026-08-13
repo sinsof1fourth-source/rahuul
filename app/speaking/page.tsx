@@ -3,8 +3,9 @@ import { Badge } from '@/components/ui/Badge'
 import { Mic, MapPin } from 'lucide-react'
 
 export const metadata = generatePageMetadata({
-  title: 'Speaking & Workshops',
-  description: 'Technical talks, keynotes, and engineering workshops by Rahul.',
+  title: 'Speaking & Keynotes',
+  description: 'Technical keynotes, architecture presentations, and systems talks by Rahuul Kalappatt.',
+  url: '/speaking',
 })
 
 const TALKS = [

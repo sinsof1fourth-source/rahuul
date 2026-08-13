@@ -5,8 +5,9 @@ import { formatDateShort } from '@/lib/utils'
 import { generatePageMetadata } from '@/lib/seo'
 
 export const metadata = generatePageMetadata({
-  title: 'Blog & Technical Writing',
-  description: 'Essays and technical notes on frontend architecture, React 19, TypeScript, and engineering design by Rahul.',
+  title: 'Research & Technical Essays',
+  description: 'Research essays, architecture notes, and technical papers on AI systems, quantitative research, and deep-space autonomy by Rahuul Kalappatt.',
+  url: '/blog',
 })
 
 export default function BlogPage() {
@@ -14,13 +15,13 @@ export default function BlogPage() {
     <div className="container-default py-16 sm:py-24">
       <div className="max-w-3xl mb-16">
         <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-light">
-          Writing
+          Research &amp; Publications
         </span>
         <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-6xl">
-          Essays &amp; Technical Notes
+          Research &amp; Technical Essays
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-foreground-muted">
-          Thoughts on building sustainable component APIs, state management patterns, CSS architecture, and high-performance Web applications.
+          Technical papers, architecture analyses, and engineering essays authored by Rahuul Kalappatt on autonomous systems, quantitative execution, multi-agent pipelines, and system durability.
         </p>
       </div>
 

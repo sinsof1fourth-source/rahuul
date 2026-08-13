@@ -2,7 +2,8 @@ import { generatePageMetadata } from '@/lib/seo'
 
 export const metadata = generatePageMetadata({
   title: 'Now',
-  description: 'What Rahul is currently focused on, building, and reading right now.',
+  description: 'What Rahuul Kalappatt is currently focused on, building, and researching right now.',
+  url: '/now',
 })
 
 export default function NowPage() {

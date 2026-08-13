@@ -33,7 +33,7 @@ npm run build
 4. Framework Preset: **Next.js** (automatically detected).
 5. Build Command: `npm run build` (`next build --webpack`).
 6. Environment Variables:
-   - `NEXT_PUBLIC_BASE_URL`: `https://rahuul.dev` (replace with your domain)
+   - `NEXT_PUBLIC_BASE_URL`: `https://rahuulkalappatt.com` (canonical primary domain)
 7. Click **Deploy**.
 
 ### Option B: Via Vercel CLI
