@@ -13,20 +13,20 @@ export interface SocialLink {
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: 'GitHub',
-    href: 'https://github.com/rahul',
-    handle: '@rahul',
+    href: 'https://github.com/sinsof1fourth-source',
+    handle: '@sinsof1fourth-source',
     icon: 'Github',
   },
   {
     name: 'Twitter / X',
-    href: 'https://twitter.com/rahulhere',
-    handle: '@rahulhere',
+    href: 'https://x.com/rahuul',
+    handle: '@rahuul',
     icon: 'Twitter',
   },
   {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com/in/rahul',
-    handle: 'in/rahul',
-    icon: 'Linkedin',
+    name: 'Mail',
+    href: 'mailto:rahuul@rahuulkalappatt.com',
+    handle: 'rahuul@rahuulkalappatt.com',
+    icon: 'Mail',
   },
 ]

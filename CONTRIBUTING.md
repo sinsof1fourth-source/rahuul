@@ -14,7 +14,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/rahul/rahuul.git
+git clone https://github.com/sinsof1fourth-source/rahuul.git
 cd rahuul
 
 # Install dependencies
