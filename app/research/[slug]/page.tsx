@@ -52,23 +52,54 @@ export default async function ResearchPaperPage({ params }: PageProps) {
     dateModified: post.date,
     author: {
       '@type': 'Person',
+      '@id': 'https://rahuulkalappatt.com/#person',
       name: 'Rahuul Kalappatt',
       url: 'https://rahuulkalappatt.com',
     },
     publisher: {
       '@type': 'Person',
+      '@id': 'https://rahuulkalappatt.com/#person',
       name: 'Rahuul Kalappatt',
       url: 'https://rahuulkalappatt.com',
     },
     mainEntityOfPage: `https://rahuulkalappatt.com/research/${post.slug}`,
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://rahuulkalappatt.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Research',
+        item: 'https://rahuulkalappatt.com/research',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://rahuulkalappatt.com/research/${post.slug}`,
+      },
+    ],
+  }
+
   return (
     <article className="container-default py-16 sm:py-24">
-      {/* Inject TechArticle JSON-LD */}
+      {/* Inject TechArticle & BreadcrumbList JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="mb-10 max-w-4xl">

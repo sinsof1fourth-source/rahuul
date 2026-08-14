@@ -96,8 +96,9 @@ export function generatePageMetadata({
 export const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${BASE_URL}/#person`,
   name: PERSON_NAME,
-  alternateName: SITE_SUBTITLE,
+  alternateName: [SITE_NAME, SITE_SUBTITLE],
   url: BASE_URL,
   image: `${BASE_URL}/images/portrait.png`,
   jobTitle: 'AI Architect, Quant Researcher & Systems Engineer',
@@ -124,11 +125,13 @@ export const personJsonLd = {
 export const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${BASE_URL}/#website`,
   name: SITE_NAME,
-  alternateName: `${PERSON_NAME} Digital Headquarters`,
+  alternateName: `${PERSON_NAME} Official Digital Headquarters`,
   url: BASE_URL,
   publisher: {
     '@type': 'Person',
+    '@id': `${BASE_URL}/#person`,
     name: PERSON_NAME,
     url: BASE_URL,
   },

@@ -56,22 +56,53 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     applicationCategory: project.category,
     author: {
       '@type': 'Person',
+      '@id': 'https://rahuulkalappatt.com/#person',
       name: 'Rahuul Kalappatt',
       url: 'https://rahuulkalappatt.com',
     },
     creator: {
       '@type': 'Person',
+      '@id': 'https://rahuulkalappatt.com/#person',
       name: 'Rahuul Kalappatt',
       url: 'https://rahuulkalappatt.com',
     },
   }
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://rahuulkalappatt.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Projects',
+        item: 'https://rahuulkalappatt.com/projects',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: project.title,
+        item: `https://rahuulkalappatt.com/projects/${project.slug}`,
+      },
+    ],
+  }
+
   return (
     <div className="relative isolate overflow-hidden py-16 sm:py-24">
-      {/* Inject SoftwareApplication / Project JSON-LD */}
+      {/* Inject SoftwareApplication & BreadcrumbList JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="pointer-events-none absolute top-1/4 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-accent/10 blur-[160px] dark:bg-accent/5" aria-hidden="true" />
