@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'jyotiai',
-    title: 'JYOTHIAI',
+    title: 'JyotiAI',
     subtitle: 'Vedic Astrology & Numerology Intelligence Platform',
     category: 'Vedic Intelligence & Mobile Systems',
     description:

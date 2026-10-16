@@ -601,7 +601,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* ─── JYOTHIAI CUSTOM ARCHITECTURE PRESENTATION ─── */}
+        {/* ─── JyotiAI CUSTOM ARCHITECTURE PRESENTATION ─── */}
         {isJyotiAi && (
           <div className="mt-16 sm:mt-24 space-y-20">
             {/* Live Web Experience Callout Banner */}
