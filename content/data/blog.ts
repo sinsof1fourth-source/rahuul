@@ -15,6 +15,20 @@ export interface BlogPost {
 /* ─── Authentic Research & Technical Essays ─── */
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'jyotiai-vedic-astrology-numerology-engine-architecture',
+    title: 'Deterministic astro-numerology engines & offline-first mobile architecture in JyotiAI',
+    description:
+      'Architectural analysis of JyotiAI: deterministic Vedic planetary algorithms (Lahiri Ayanamsha, Bhavas, Nakshatras), dual Chaldean/Pythagorean numerology matrices, offline-first computation pipelines, and pgvector knowledge retrieval.',
+    date: '2026-10-08',
+    author: 'Rahuul Kalappatt',
+    tags: ['Vedic Astrology', 'Numerology', 'Mobile Architecture', 'TypeScript', 'Supabase'],
+    cover: '/images/blog/component-api.jpg',
+    coverAlt: 'JyotiAI deterministic astro-numerology engine architecture diagram',
+    readingTime: '14 min read',
+    featured: true,
+    draft: false,
+  },
+  {
     slug: 'aion-deep-space-autonomous-loop-architecture',
     title: 'Autonomous self-healing loops & radiation resilience in 30-year space systems',
     description:

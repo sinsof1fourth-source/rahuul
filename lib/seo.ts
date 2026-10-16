@@ -116,6 +116,8 @@ export const personJsonLd = {
     'Media Infrastructure',
     'Systems Engineering',
     'Deep-Space Autonomy',
+    'Vedic Astrology & Numerology Systems',
+    'Mobile Application Architecture',
   ],
 } as const
 

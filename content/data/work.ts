@@ -27,6 +27,28 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    slug: 'jyotiai',
+    title: 'JYOTHIAI',
+    subtitle: 'Vedic Astrology & Numerology Intelligence Platform',
+    category: 'Vedic Intelligence & Mobile Systems',
+    description:
+      'A cross-platform mobile intelligence application combining deterministic Vedic astrological calculations and dual Chaldean/Pythagorean numerology engines with an offline-first mobile architecture, context-aware guidance, and Supabase pgvector retrieval.',
+    status: 'In Development',
+    year: '2025–2026',
+    tags: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Supabase',
+      'pgvector',
+      'Numerology Engine',
+      'Vedic Astrology',
+      'Cloudflare Workers',
+    ],
+    url: 'https://jyotiai.app',
+    featured: true,
+  },
+  {
     slug: 'vega-omega',
     title: 'VEGA OMEGA',
     subtitle: 'AI + Quantitative Systems Architecture',

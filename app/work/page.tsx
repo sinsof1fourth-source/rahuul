@@ -26,9 +26,8 @@ export default function WorkPage() {
 
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project) => (
-          <Link
+          <div
             key={project.slug}
-            href={`/work/${project.slug}`}
             className="group relative flex flex-col justify-between rounded-2xl border border-border-subtle/80 bg-surface/40 p-7 transition-all duration-300 hover:border-border-strong/90 hover:bg-surface/80 hover:shadow-card overflow-hidden"
           >
             <div>
@@ -41,9 +40,11 @@ export default function WorkPage() {
                 </Badge>
               </div>
 
-              <h2 className="mt-2 font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light flex items-center justify-between">
-                <span>{project.title}</span>
-                <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-accent-light" />
+              <h2 className="mt-2 font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light">
+                <Link href={`/work/${project.slug}`} className="hover:text-accent-light transition-colors flex items-center justify-between">
+                  <span>{project.title}</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-accent-light" />
+                </Link>
               </h2>
               <p className="mt-1 text-xs font-mono text-foreground-dim">
                 {project.subtitle}
@@ -63,18 +64,33 @@ export default function WorkPage() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between text-xs font-mono text-accent-light">
-                <span className="inline-flex items-center gap-1 font-semibold group-hover:underline">
-                  View Architecture Details <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-                {project.github && (
-                  <span className="text-foreground-dim flex items-center gap-1">
-                    <Code2 className="h-3.5 w-3.5" /> Code
-                  </span>
-                )}
+              <div className="flex items-center justify-between text-xs font-mono text-accent-light pt-2 border-t border-border-subtle/30">
+                <Link
+                  href={`/work/${project.slug}`}
+                  className="inline-flex items-center gap-1 font-semibold hover:underline"
+                >
+                  Case Study <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <div className="flex items-center gap-3">
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-accent-warm hover:text-accent-light transition-colors"
+                    >
+                      Live Site ↗
+                    </a>
+                  )}
+                  {project.github && (
+                    <span className="text-foreground-dim flex items-center gap-1">
+                      <Code2 className="h-3.5 w-3.5" /> Code
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

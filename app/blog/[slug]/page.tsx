@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/Badge'
 import { formatDateShort } from '@/lib/utils'
 import { generatePageMetadata } from '@/lib/seo'
 import { ArrowLeft, User, Calendar, Clock } from 'lucide-react'
+import { JyotiAiTechnicalArticle } from '@/components/blog/JyotiAiTechnicalArticle'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -142,17 +143,21 @@ export default async function BlogPostPage({ params }: PageProps) {
       </div>
 
       {/* Essay Main Body */}
-      <div className="max-w-4xl rounded-3xl border border-border-subtle/80 bg-surface/30 p-8 sm:p-12 leading-relaxed text-foreground-muted space-y-6">
-        <p className="text-base sm:text-lg">
-          This technical essay by <strong className="text-foreground">Rahuul Kalappatt</strong> details the underlying system architecture, constraints, and empirical principles behind {post.title.toLowerCase()}.
-        </p>
-        <p>
-          In complex software systems—whether operating in quantitative financial markets or autonomous long-duration deep-space environments—reliability stems from strict state isolation, deterministic recovery loops, and explicit failure domain boundaries.
-        </p>
-        <div className="p-6 rounded-2xl border border-accent/20 bg-accent/5 font-mono text-sm text-accent-light">
-          “Build systems in silence. Reveal results, not intentions.” — Rahuul Kalappatt
+      {post.slug === 'jyotiai-vedic-astrology-numerology-engine-architecture' ? (
+        <JyotiAiTechnicalArticle />
+      ) : (
+        <div className="max-w-4xl rounded-3xl border border-border-subtle/80 bg-surface/30 p-8 sm:p-12 leading-relaxed text-foreground-muted space-y-6">
+          <p className="text-base sm:text-lg">
+            This technical essay by <strong className="text-foreground">Rahuul Kalappatt</strong> details the underlying system architecture, constraints, and empirical principles behind {post.title.toLowerCase()}.
+          </p>
+          <p>
+            In complex software systems—whether operating in quantitative financial markets or autonomous long-duration deep-space environments—reliability stems from strict state isolation, deterministic recovery loops, and explicit failure domain boundaries.
+          </p>
+          <div className="p-6 rounded-2xl border border-accent/20 bg-accent/5 font-mono text-sm text-accent-light">
+            “Build systems in silence. Reveal results, not intentions.” — Rahuul Kalappatt
+          </div>
         </div>
-      </div>
+      )}
     </article>
   )
 }

@@ -1,4 +1,8 @@
+'use client'
+
+import { useRef } from 'react'
 import { Lock, Cpu, BarChart3, ShieldCheck } from 'lucide-react'
+import { useScrollReveal } from '@/lib/animations/useScrollReveal'
 
 const PRINCIPLES = [
   {
@@ -32,8 +36,17 @@ const PRINCIPLES = [
 ]
 
 export function ShadowPrinciplesSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useScrollReveal({
+    triggerRef: sectionRef,
+    targetSelector: '.principle-card',
+    variant: 'fade-up',
+    stagger: 0.12,
+  })
+
   return (
-    <section className="relative py-24 sm:py-32 bg-background border-t border-border-subtle/50">
+    <section ref={sectionRef} className="relative py-24 sm:py-32 bg-background border-t border-border-subtle/50">
       <div className="container-default">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-light">
@@ -53,7 +66,7 @@ export function ShadowPrinciplesSection() {
             return (
               <div
                 key={principle.number}
-                className="group relative flex flex-col justify-between rounded-2xl border border-border-subtle/80 bg-surface/30 p-8 sm:p-10 transition-all duration-300 hover:border-accent/40 hover:bg-surface/60 hover:shadow-elevated"
+                className="principle-card group relative flex flex-col justify-between rounded-2xl border border-border-subtle/80 bg-surface/30 p-8 sm:p-10 transition-all duration-300 hover:border-accent/40 hover:bg-surface/60 hover:shadow-elevated"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

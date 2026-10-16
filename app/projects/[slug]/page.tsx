@@ -10,6 +10,15 @@ import {
   ShieldCheck,
   AlertTriangle,
   User,
+  ExternalLink,
+  Sparkles,
+  Cpu,
+  Calendar,
+  Compass,
+  Activity,
+  CheckCircle2,
+  Database,
+  Smartphone,
 } from 'lucide-react'
 
 interface PageProps {
@@ -46,6 +55,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   const isAion = project.slug === 'aion'
+  const isJyotiAi = project.slug === 'jyotiai'
   const relatedProjects = PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 3)
 
   const softwareAppJsonLd = {
@@ -201,7 +211,197 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {!isAion && (
+        {/* ─── JYOTHIAI CUSTOM ARCHITECTURE PRESENTATION ─── */}
+        {isJyotiAi && (
+          <div className="mt-16 sm:mt-24 space-y-20">
+            {/* Live Web Experience Callout Banner */}
+            <div className="relative rounded-3xl border border-accent/40 bg-surface/50 p-8 sm:p-12 shadow-elevated overflow-hidden">
+              <div
+                className="pointer-events-none absolute inset-0 -z-10 bg-radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%) opacity-30"
+                aria-hidden="true"
+              />
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-light">
+                    Verified Web Experience &amp; Mobile Platform
+                  </span>
+                  <h2 className="mt-2 font-display text-2xl sm:text-4xl font-bold text-foreground">
+                    JyotiAI: A Living System of Patterns
+                  </h2>
+                  <p className="mt-2 text-sm sm:text-base text-foreground-muted max-w-2xl">
+                    Explore the live Three.js 3D interactive universe, interactive pattern web, and mathematical numerology/astrology reflections at the official domain.
+                  </p>
+                </div>
+                <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <a
+                    href="https://jyotiai.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-background transition-all hover:bg-accent-light hover:shadow-glow"
+                  >
+                    Launch jyotiai.app <ExternalLink className="h-4 w-4" />
+                  </a>
+                  <Link
+                    href="/blog/jyotiai-vedic-astrology-numerology-engine-architecture"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border-subtle/80 bg-surface/60 px-5 py-3.5 text-sm font-mono font-medium text-foreground hover:border-accent/40 transition-colors"
+                  >
+                    Read Technical Paper <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Core Architecture Pillars Grid */}
+            <section>
+              <div className="max-w-2xl mb-10">
+                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-light">
+                  Mathematical &amp; Systems Architecture
+                </span>
+                <h2 className="mt-2 font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+                  Core Engineering Pillars
+                </h2>
+                <p className="mt-2 text-foreground-muted">
+                  Deterministic offline-first engines designed for sub-millisecond calculation and total data privacy.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    title: 'Deterministic Vedic Astrological Engine',
+                    icon: Compass,
+                    tag: 'Astro Calculations',
+                    desc: 'Mathematical calculation of the D1 (Rashi) chart, Ascendant (Lagna) determination via precise geographic coordinates and UTC timestamps, Lahiri Ayanamsha subtraction from tropical longitudes, 12 Bhavas, 27 Nakshatras & 108 padas, and 120-year Vimshottari Dasha timeline balances.',
+                  },
+                  {
+                    title: 'Dual Numerology Computation Matrices',
+                    icon: Cpu,
+                    tag: 'Numerology Engine',
+                    desc: 'Simultaneous evaluation across Chaldean (sound-vibrational frequencies 1-8 with compound master numbers) and Pythagorean (1-9 alphabet matrix) systems. Computes Life Path, Destiny, Soul Urge, Personality, and dynamic Personal Year, Month, and Day cycles.',
+                  },
+                  {
+                    title: 'Kundli Screen & Geometric Visualizer',
+                    icon: Sparkles,
+                    tag: 'Visual Chart Engine',
+                    desc: 'Precision visual chart renderer supporting both North Indian diamond and South Indian square geometric formats with zero third-party chart bloat. Evaluates house cusps, planetary placements, and aspect angle matrices dynamically.',
+                  },
+                  {
+                    title: 'Transit & Daily Forecast Engine',
+                    icon: Activity,
+                    tag: 'Forecast Engine',
+                    desc: 'Real-time ephemeris planetary movements evaluated against the native natal chart positions, combined with personal day vibrational numbers to provide contextual, grounded daily guidance without superstitious or supernatural claims.',
+                  },
+                  {
+                    title: 'Numerology Calendar',
+                    icon: Calendar,
+                    tag: 'Cycle Tracking',
+                    desc: 'Interactive personal day calendar mapping daily vibrational frequencies, transition inflection points, and auspicious activity timing windows according to classical cycle mathematics.',
+                  },
+                  {
+                    title: 'Supabase pgvector & Privacy Guarantee',
+                    icon: Database,
+                    tag: 'Knowledge Retrieval',
+                    desc: 'Supabase PostgreSQL database equipped with pgvector embeddings indexing 13 authentic classical Vedic sources across 27 chunks. Protected by 9 strict Row-Level Security (RLS) policies guaranteeing total isolation of user birth details.',
+                  },
+                ].map((pillar) => {
+                  const IconComp = pillar.icon
+                  return (
+                    <div
+                      key={pillar.title}
+                      className="group rounded-2xl border border-border-subtle/80 bg-surface/30 p-6 transition-all duration-300 hover:border-accent/40 hover:bg-surface/60 hover:shadow-card flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="inline-flex items-center rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5 text-[11px] font-mono text-accent-light">
+                            {pillar.tag}
+                          </span>
+                          <div className="rounded-xl bg-accent/10 p-2 text-accent-light border border-accent/20">
+                            <IconComp className="h-4 w-4" />
+                          </div>
+                        </div>
+                        <h3 className="font-display font-bold text-lg text-foreground group-hover:text-accent-light transition-colors">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-3 text-xs leading-relaxed text-foreground-muted">
+                          {pillar.desc}
+                        </p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </section>
+
+            {/* Mobile Architecture & Client Stack */}
+            <section className="rounded-3xl border border-border-subtle/80 bg-surface/40 p-8 sm:p-12 shadow-elevated">
+              <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
+                <div className="max-w-2xl">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-mono font-semibold text-accent-light uppercase tracking-wider mb-4">
+                    <Smartphone className="h-3.5 w-3.5" /> Mobile Application Client
+                  </div>
+                  <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
+                    Offline-First Mobile Architecture
+                  </h2>
+                  <p className="mt-4 text-base sm:text-lg leading-relaxed text-foreground-muted">
+                    Engineered with React Native and Expo in strict TypeScript mode. All core astrological calculations, numerology reductions, and Kundli geometry generation execute 100% locally on the device with zero network dependency.
+                  </p>
+
+                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-mono text-foreground-muted">
+                    {[
+                      'React Native Expo SDK 51/52 Framework',
+                      'Deterministic Local Math Calculation (0ms API latency)',
+                      'Zustand Reactive State Architecture',
+                      'RevenueCat Subscription Bridge (₹288/mo · ₹2,880/yr)',
+                      'Free Forever Daily Reading & Core Numbers Tier',
+                      'Edge Static Web Experience on Cloudflare Workers',
+                    ].map((feature) => (
+                      <div key={feature} className="flex items-center gap-2.5 p-3 rounded-xl border border-border-subtle/60 bg-surface/60">
+                        <CheckCircle2 className="h-4 w-4 text-accent-light shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="w-full lg:w-80 rounded-2xl border border-border-subtle/80 bg-background/90 p-6 space-y-4">
+                  <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-light block border-b border-border-subtle/50 pb-2">
+                    Verified Empirical Status
+                  </span>
+                  <div className="space-y-3 text-xs font-mono">
+                    <div>
+                      <span className="text-foreground-dim block">Test Suites:</span>
+                      <span className="text-foreground font-semibold">96 / 96 Passing (0 Failures)</span>
+                    </div>
+                    <div>
+                      <span className="text-foreground-dim block">Database Vector Index:</span>
+                      <span className="text-foreground font-semibold">13 Classical Sources / 27 Chunks</span>
+                    </div>
+                    <div>
+                      <span className="text-foreground-dim block">Row-Level Security:</span>
+                      <span className="text-foreground font-semibold">9 Active Strict RLS Policies</span>
+                    </div>
+                    <div>
+                      <span className="text-foreground-dim block">Android Package:</span>
+                      <span className="text-accent-light font-semibold">ai.jyoti.app (Closed Test Track)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Disclaimer & Status Callout */}
+            <div className="rounded-2xl border border-border-subtle/80 bg-background/90 p-6 sm:p-8">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-foreground-dim">
+                Scientific Context &amp; Implementation Boundary
+              </span>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                JyotiAI presents numerology and Vedic astrology as traditional interpretive frameworks for self-reflection and personal inquiry. It does <strong className="text-foreground">not</strong> claim deterministic fortune-telling, medical diagnosis, or legal/financial advice. The deterministic mathematical calculation engines, Kundli visualizer, and numerology cycle calendars are fully implemented and verified; commercial store access is currently managed via Google Play closed tester tracks.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {!isAion && !isJyotiAi && (
           <div className="mt-16 rounded-3xl border border-border-subtle/80 bg-surface/30 p-8 sm:p-12">
             <h2 className="font-display text-2xl font-bold text-foreground">Architecture Overview</h2>
             <p className="mt-4 text-base leading-relaxed text-foreground-muted">

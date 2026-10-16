@@ -1,4 +1,8 @@
+'use client'
+
+import { useRef } from 'react'
 import { Compass, Sparkles, Layers, Terminal, Shield } from 'lucide-react'
+import { useScrollReveal } from '@/lib/animations/useScrollReveal'
 
 const ROADMAP_TIERS = [
   {
@@ -64,8 +68,17 @@ const ROADMAP_TIERS = [
 ]
 
 export function MasterRoadmapSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useScrollReveal({
+    triggerRef: sectionRef,
+    targetSelector: '.roadmap-tier-card',
+    variant: 'fade-up',
+    stagger: 0.12,
+  })
+
   return (
-    <section id="roadmap" className="relative py-24 sm:py-32 bg-surface/20 border-t border-border-subtle/50">
+    <section id="roadmap" ref={sectionRef} className="relative py-24 sm:py-32 bg-surface/20 border-t border-border-subtle/50">
       <div className="container-default">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-light">
@@ -86,7 +99,7 @@ export function MasterRoadmapSection() {
             return (
               <div
                 key={level.tier}
-                className={`relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${level.color} shadow-elevated`}
+                className={`roadmap-tier-card relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${level.color} shadow-elevated`}
                 style={{
                   // Visual pyramid taper effect
                   maxWidth: `${100 - idx * 4}%`,

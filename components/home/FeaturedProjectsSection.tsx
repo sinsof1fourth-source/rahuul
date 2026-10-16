@@ -2,22 +2,21 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ExternalLink } from 'lucide-react'
 import { PROJECTS, type Project } from '@/content/data/work'
 import { Badge } from '@/components/ui/Badge'
 import { useScrollReveal } from '@/lib/animations/useScrollReveal'
 import { useCardHover } from '@/lib/animations/useCardHover'
 
 function ProjectCard({ project }: { project: Project }) {
-  const { cardRef, handleMouseMove, handleMouseLeave } = useCardHover<HTMLAnchorElement>({
+  const { cardRef, handleMouseMove, handleMouseLeave } = useCardHover<HTMLDivElement>({
     maxRotation: 2,
     scale: 1.01,
     liftY: -4,
   })
 
   return (
-    <Link
-      href={`/work/${project.slug}`}
+    <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -39,9 +38,11 @@ function ProjectCard({ project }: { project: Project }) {
           </Badge>
         </div>
 
-        <h3 className="font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light flex items-center justify-between">
-          <span>{project.title}</span>
-          <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-accent-light" />
+        <h3 className="font-display text-2xl font-bold text-foreground transition-colors group-hover:text-accent-light">
+          <Link href={`/projects/${project.slug}`} className="hover:text-accent-light transition-colors flex items-center justify-between">
+            <span>{project.title}</span>
+            <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 text-accent-light" />
+          </Link>
         </h3>
         <p className="mt-1 text-xs font-mono text-foreground-dim">
           {project.subtitle}
@@ -53,7 +54,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-6 border-t border-border-subtle/50 pt-4">
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -63,8 +64,28 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
+
+        <div className="flex items-center justify-between pt-2 border-t border-border-subtle/30 text-xs font-mono">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="inline-flex items-center gap-1 font-semibold text-accent-light hover:underline"
+          >
+            Architecture <ArrowRight className="h-3 w-3" />
+          </Link>
+
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold text-accent-warm hover:text-accent-light transition-colors"
+            >
+              Live Site <ExternalLink className="h-3 w-3" />
+            </a>
+          )}
+        </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
